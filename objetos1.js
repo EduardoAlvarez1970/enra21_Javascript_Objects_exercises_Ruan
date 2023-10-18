@@ -38,18 +38,40 @@ alert(`Meu nome e ${programador.nome}, tenho ${programador.idade}, e falo ${prog
 
 /*segunda versão*/
 
-const programador = {
+const programador1 = {
     nome: 'Juan',
     idade: 18,
-    linguagens: ['Espanhol', 'Ingles', 'Portugueis'],
+    linguagens: ['Javascript', 'Phython', 'HTML'],
     apresentação: function() {
-        alert(`Meu nome é ${this.nome}, tenho ${this.idade}, e falo ${this.linguagens[0]}, ${this.linguagens[1]}, é ${this.linguagens[0] }`)
+        alert(`Meu nome é ${this.nome}, tenho ${this.idade}, e conheço as linguagens ${this.linguagens[0]}, ${this.linguagens[1]}, é ${this.linguagens[0] }`)
     }
 }
 
 
-console.log(programador.nome);
-console.log(programador.idade);
-console.log(programador.linguagens);
-console.log(programador.apresentação());
+console.log(programador1.nome);
+console.log(programador1.idade);
+console.log(programador1.linguagens);
+console.log(programador1.apresentação());
+
+
+/*Com base no objeto programador, crie um laço de repetição para exibir vários alertas
+mostrando individualmente cada linguagem de programação que está no Array de
+linguagens no seguinte formato:
+
+Linguagem 1: JavaScript
+Linguagem 2: HTML*/
+
+
+const programador2 = {
+    nome: 'Juan',
+    idade: 18,
+    linguagens: ['Javascript', 'Phython', 'HTML'],
+    apresentação: function() {
+        for(let i = 0; i < this.linguagens.length; i++) {
+            alert(`Linguagem ${i+1}: ${this.linguagens[i]}`)
+        }
+    }
+}
+
+console.log(programador2.apresentação());
 
