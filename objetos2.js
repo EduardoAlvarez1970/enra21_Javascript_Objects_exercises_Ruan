@@ -29,3 +29,54 @@ Array. Inclua um laço de repetição que pergunte se o cliente deseja finalizar
 ao final da compra, exiba o valor total e a quantidade de produtos.
 Obs: Dentro do laço de repetição busque apenas criar os objetos e incluir na lista, as
 análises de preço e quantidade faça depois do laço de repetição.*/
+
+let items = [];
+
+let arrayPrecos = [];
+
+let continuar = true;
+
+while(continuar == true) {
+    let produto = prompt('Digite o nome do produto');
+    let preco = Number(prompt('Digite o preço do produto'));
+    let item = {
+        produto : produto,
+        preco : preco
+    }
+    items.push(item);
+    arrayPrecos.push(item.preco);
+    
+    let finalizar = prompt('Deseja finalizar? S / N');
+    if(finalizar == 'S'){
+        continuar = false;
+    } else {
+        continuar
+    }
+}
+console.log(items);
+
+console.log(arrayPrecos)
+
+// Crear una cadena legible para mostrar los elementos del arreglo
+
+
+let itemsTexto = '';
+
+for (let i = 0; i < items.length; i++) {
+    itemsTexto += `Produto: ${items[i].produto}, Preço: ${items[i].preco}\n`;
+}
+
+alert(`Os items são: \n ${itemsTexto}`);
+
+//Mostrar valor total y quantidade de produtos.
+
+let valorTotal = arrayPrecos.reduce((acumulador, preco) => acumulador + preco);
+
+alert(`O valor total é ${valorTotal}`);
+
+let quantidadeProdutos = arrayPrecos.length;
+
+alert(`A quantidade de produtos é ${quantidadeProdutos}`)
+
+
+
